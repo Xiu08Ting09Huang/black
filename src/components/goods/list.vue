@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="page">
         <h1>产品列表页</h1>
     </div>
   

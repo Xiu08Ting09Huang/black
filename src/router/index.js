@@ -48,7 +48,7 @@ export default new Router({
       component:News
     },
     {
-      path: '/news/detail',
+      path: '/news/detail/:id',
       component:NewsDetail
     },
     {
@@ -59,5 +59,7 @@ export default new Router({
       path: '/pictures/detail',
       component:PicDetail
     },
-  ]
+  ],
+  linkActiveClass:'mui-active'
+
 })
