@@ -1,8 +1,6 @@
 <template>
     <div class="page">
-<<<<<<< HEAD
-        <h1>首页</h1>
-=======
+
         <mt-swipe :auto="4000">
             <mt-swipe-item v-for="(v,i) in bannerList" :key='i'><img :src="v.img" alt=""></mt-swipe-item> 
         </mt-swipe>
@@ -46,7 +44,7 @@
                     </li>
 		        </ul> 
 		</div>
->>>>>>> home
+
     </div>
   
 </template>
