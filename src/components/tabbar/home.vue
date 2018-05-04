@@ -1,9 +1,6 @@
 <template>
     <div class="page">
-<<<<<<< HEAD
 
-=======
->>>>>>> commtent
         <mt-swipe :auto="4000">
             <mt-swipe-item v-for="(v,i) in bannerList" :key='i'><img :src="v.img" alt=""></mt-swipe-item> 
         </mt-swipe>
