@@ -11,13 +11,16 @@
         <div class="detail-content" v-html="newsDetail.content">
             
         </div>
-        <div class="detail-comment"></div>
+        <div class="detail-comment">
+            <comment/>
+        </div>
     </div>
   
 </template>
 <script>
 import axios from "axios"
 import dateformat from "@/filters/dateformat"
+import comment from "../comment/comment"
 export default {
   data(){
       return{
@@ -35,6 +38,9 @@ export default {
   },
   filters:{
       dateformat
+  },
+  components:{
+      comment
   }
 }
 </script>
