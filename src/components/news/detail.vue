@@ -12,7 +12,7 @@
             
         </div>
         <div class="detail-comment">
-            <comment/>
+            <comment :id="$route.params.id"/>
         </div>
     </div>
   
