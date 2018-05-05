@@ -52,11 +52,11 @@ export default new Router({
       component:NewsDetail
     },
     {
-      path: '/pictures',
+      path: '/pictures/:id',
       component:Pics
     },
     {
-      path: '/pictures/detail',
+      path: '/pictures/detail/:id',
       component:PicDetail
     },
   ],
