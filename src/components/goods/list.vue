@@ -1,6 +1,6 @@
 <template>
     <div class="page goods-list">
-        <div class="goods-item" v-for="(v,i) in goodsList" :key="i">
+        <div class="goods-item" v-for="(v,i) in goodsList" :key="i" @click="$router.push('/goods/detail/'+v.id)">
             <img  :src="v.img_url" alt=""> 
             <h4 >{{v.title}}</h4> 
             <div class="info">
