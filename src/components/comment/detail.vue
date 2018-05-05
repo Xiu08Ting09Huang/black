@@ -8,7 +8,7 @@
             </p>
         </div>
         <hr>
-        <slot name="thumbs"></slot>
+        <slot name="pics"></slot>
         <div class="detail-content" v-html="article.content">
             
         </div>

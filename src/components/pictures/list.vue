@@ -1,20 +1,18 @@
 <template>
     <div class="page">
-       <div id="slider" class="mui-slider mui-fullscreen">
-			<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-				<div class="mui-scroll">
-					<router-link class="mui-control-item-cms" to="/pictures/0" data-wid="tab-top-subpage-1.html">
-						全部
-					</router-link>
-					<router-link v-for="(v,i) in categoryList" :key='i'  class="mui-control-item-cms" :to="'/pictures/'+v.id" data-wid="tab-top-subpage-1.html">
-						{{v.title}}
-					</router-link>
-				</div>
+		<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			<div class="mui-scroll">
+				<router-link class="mui-control-item-cms" to="/pictures/0" data-wid="tab-top-subpage-1.html">
+					全部
+				</router-link>
+				<router-link v-for="(v,i) in categoryList" :key='i'  class="mui-control-item-cms" :to="'/pictures/'+v.id" data-wid="tab-top-subpage-1.html">
+					{{v.title}}
+				</router-link>
 			</div>
 		</div>
 		<ul>
-			<li v-for="(v,i) in picsList" :key="i">
-				<img v-lazy="v.img_url" alt="">
+			<li v-for="(v,i) in picsList" :key="i" @click="$router.push('/pictures/detail/'+ v.id)" >
+				<img v-lazy="v.img_url" alt="" >
 				<div class="info">
 					<h4>{{v.title}}</h4>
 					
@@ -60,6 +58,7 @@ export default {
 				}
 			})
 	  }
+
   },
   mounted() {
     mui(".mui-scroll-wrapper").scroll({
@@ -82,7 +81,7 @@ export default {
 }
 ul {
   list-style: none;
-  margin-top: 30px;
+  margin: 0;
   padding: 10px;
 }
 
@@ -96,6 +95,7 @@ ul li {
 ul li img {
   width: 100%;
   display: block;
+  z-index:999
 }
 
 ul li .info {

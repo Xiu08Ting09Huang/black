@@ -8,6 +8,11 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
 
+// 图片放大预览插件
+import VuePreview from 'vue-preview'
+// defalut install
+Vue.use(VuePreview)
+
 // 引入mui的css文件和font文件
 import './assets/mui/css/mui.css'
 import './assets/mui/css/icons-extra.css'
