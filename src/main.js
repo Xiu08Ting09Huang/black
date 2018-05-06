@@ -13,6 +13,8 @@ import VuePreview from 'vue-preview'
 // defalut install
 Vue.use(VuePreview)
 
+// 安装vuex插件
+import store from "./store/index"
 // 引入mui的css文件和font文件
 import './assets/mui/css/mui.css'
 import './assets/mui/css/icons-extra.css'
@@ -21,5 +23,6 @@ import './assets/mui/css/icons-extra.css'
 new Vue({
   el: '#app',
   router,
-  render: h => h(App)
+  render: h => h(App),
+  store
 })

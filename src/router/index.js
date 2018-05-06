@@ -8,6 +8,8 @@ import News from '@/components/news/list'
 import NewsDetail from '@/components/news/detail'
 import Goods from '@/components/goods/list'
 import GoodDetail from '@/components/goods/detail'
+import GoodComment from "@/components/goods/comment"
+import GoodDesc from "@/components/goods/desc"
 import Pics from '@/components/pictures/list'
 import PicDetail from '@/components/pictures/detail'
 
@@ -42,6 +44,14 @@ export default new Router({
     {
       path: '/goods/detail/:id',
       component:GoodDetail
+    },
+    {
+      path: '/goods/comment/:id',
+      component:GoodComment
+    },
+    {
+      path: '/goods/desc/:id',
+      component:GoodDesc
     },
     {
       path: '/news',

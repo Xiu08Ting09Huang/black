@@ -31,7 +31,7 @@
 				    </div>
                     <div class="btns">
                         <mt-button type="primary">立即购买</mt-button> 
-                        <mt-button type="danger">加入购物车</mt-button>
+                        <mt-button type="danger" @click="addCart">加入购物车</mt-button>
                     </div>
                 </div>
                 
@@ -47,11 +47,14 @@
                 </div>
             </div>
             <div class="mui-card-footer">
-                <mt-button type="primary" size="large" :plain="true" >商品描述</mt-button>
+                <mt-button type="primary" size="large" :plain="true" @click="$router.push('/goods/desc/'+goodInfo.id)" >商品描述</mt-button>
                 <br>
-                <mt-button type="danger" size="large" :plain="true">商品评论</mt-button>
+                <mt-button type="danger" size="large" :plain="true" @click="$router.push('/goods/comment/'+goodInfo.id)" >商品评论</mt-button>
             </div>
         </div>
+        <transition  v-on:before-enter="beforeEnter" v-on:enter="enter">
+             <div class="redball" v-show="isShowBall"></div>
+        </transition>
     </div>
   
 </template>
@@ -64,9 +67,26 @@ export default {
     return {
       lunbos: [],
       goodInfo:{},
-      count:10
-
+      count:10,
+      isShowBall:false
     };
+  },
+  methods:{
+      addCart(){
+          this.isShowBall = true;
+      },
+      beforeEnter:function(el){
+          el.style.top='445px';
+          el.style.left="175px";
+          
+      },
+      enter:function(el){
+          el.style.transition="all .4s linear"
+          el.offsetWidth
+          el.style.top= 620+ window.pageYOffset+'px';
+          el.style.left="240px";
+          this.isShowBall = false
+      }
   },
   created() {
     //   获取商品页面的轮播图
