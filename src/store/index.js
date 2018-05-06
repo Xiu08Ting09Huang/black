@@ -37,7 +37,10 @@ export default new Vuex.Store({
     // 获取id对应的数量
     getCountById:state=>id=>{
         var temp =  state.carts.find(v=>v.id == id);
-        return temp.count
+        
+          return temp.count
+       
+        
     },
   },
   mutations: {

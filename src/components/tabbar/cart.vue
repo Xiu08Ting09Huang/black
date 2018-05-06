@@ -76,7 +76,9 @@ export default {
             var sum = 0;
             this.cartList.forEach(v=>{
                 if(v.checked){
+                    console.log(v)
                     sum += v.count
+                    
                 }
             })
             return sum
