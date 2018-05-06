@@ -67,13 +67,17 @@ export default {
     return {
       lunbos: [],
       goodInfo:{},
-      count:10,
+      count:0,
       isShowBall:false
     };
   },
   methods:{
       addCart(){
           this.isShowBall = true;
+          this.$store.commit('addToCart',{
+              id:this.$route.params.id,
+              count:this.count
+          })
       },
       beforeEnter:function(el){
           el.style.top='445px';
